@@ -15,17 +15,42 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-gray-900 text-gray-100 min-h-screen">
-      {/* Hero Section */}
-      <header className="text-center py-16 bg-gradient-to-r from-purple-600 to-indigo-600 shadow-lg">
-        <h1 className="text-5xl font-extrabold mb-4">Sathwik</h1>
-        <p className="text-xl mb-6">Full-Stack Developer | Python | Django | React</p>
+    <div className="bg-gradient-to-br from-purple-900 via-black to-indigo-900 text-gray-100 min-h-screen">
+      {/* Navbar */}
+      <nav className="fixed w-full bg-black bg-opacity-60 backdrop-blur-lg z-50 shadow-lg">
+        <div className="container mx-auto flex justify-between items-center px-6 py-4">
+          <h1 className="text-2xl font-bold text-pink-500">Sathwik</h1>
+          <div className="space-x-6">
+            <a href="#about" className="hover:text-pink-400">About</a>
+            <a href="#projects" className="hover:text-pink-400">Projects</a>
+            <a href="#skills" className="hover:text-pink-400">Skills</a>
+            <a href="#education" className="hover:text-pink-400">Education</a>
+            <a href="#certifications" className="hover:text-pink-400">Certifications</a>
+            <a href="#contact" className="hover:text-pink-400">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero / About Section */}
+      <header id="about" className="text-center py-40">
+        <h1 className="text-6xl font-extrabold mb-4">
+          Hello, I'm <span className="text-pink-500">Sathwik</span>{" "}
+          <span className="text-green-400">👋</span>
+        </h1>
+        <p className="text-xl max-w-3xl mx-auto mb-6 text-gray-300">
+          Aspiring <span className="text-green-400">Python Developer</span> with strong
+          problem-solving skills and hands-on project experience. Proficient in{" "}
+          <span className="text-pink-500">Python</span>,{" "}
+          <span className="text-green-400">MySQL</span>, and{" "}
+          <span className="text-pink-500">Web Technologies</span>. Passionate about
+          applying software expertise to real-world challenges.
+        </p>
         <div className="space-x-4">
           <a
             href="https://github.com/ChYuvaSathwik"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+            className="bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800 transition"
           >
             GitHub
           </a>
@@ -33,86 +58,100 @@ function App() {
             href="https://linkedin.com/in/YOUR_LINKEDIN"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500 transition"
+            className="bg-pink-600 px-4 py-2 rounded-lg hover:bg-pink-500 transition"
           >
             LinkedIn
+          </a>
+          <a
+            href="https://ik.imagekit.io/zpvisqc1b/Sathwik_Chinta_Python_Developer_Resume.pdf?updatedAt=1757793373814"
+            download
+            className="bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-2 rounded-lg hover:from-pink-400 hover:to-purple-500 transition"
+          >
+            📄 Get Resume
           </a>
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-6 py-12 space-y-16">
-        {/* Projects Section */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-2">
-            🚀 Projects
-          </h2>
-          {projects.length > 0 ? (
-            <div className="grid md:grid-cols-2 gap-6">
-              {projects.map((project) => (
-                <div
-                  key={project.id}
-                  className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition"
-                >
-                  <h3 className="text-xl font-semibold text-purple-400 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-400 hover:underline"
-                  >
-                    View Project →
-                  </a>
-                </div>
-              ))}
+      {/* Projects */}
+      <section id="projects" className="container mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-pink-400 mb-10">🚀 Projects</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <div key={project.id} className="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+              <h3 className="text-2xl font-semibold text-green-400">{project.title}</h3>
+              <p className="text-gray-300 mb-3">{project.description}</p>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline">
+                🔗 View Project
+              </a>
             </div>
-          ) : (
-            <p>Loading projects...</p>
-          )}
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Skills Section */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-2">
-            🛠 Skills
-          </h2>
-          {skills.length > 0 ? (
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  key={skill.id}
-                  className="px-4 py-2 bg-indigo-700 rounded-full text-sm font-medium hover:bg-indigo-600 transition"
-                >
-                  {skill.name}
-                </span>
-              ))}
+      {/* Skills */}
+      <section id="skills" className="container mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-green-400 mb-10">🛠 Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {skills.map((skill) => (
+            <div key={skill.id} className="bg-gray-800 p-4 rounded-lg text-center shadow-md hover:scale-105 transition">
+              {skill.name}
             </div>
-          ) : (
-            <p>Loading skills...</p>
-          )}
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Contact Section */}
-        <section className="text-center">
-          <h2 className="text-3xl font-bold mb-4">📬 Contact Me</h2>
-          <p className="mb-4">
-            I’d love to connect! Feel free to reach out via email or LinkedIn.
-          </p>
-          <a
-            href="mailto:your_email@example.com"
-            className="bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition"
-          >
-            Send Email
-          </a>
-        </section>
-      </main>
+      {/* Education */}
+      <section id="education" className="container mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-pink-400 mb-6">🎓 Education</h2>
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 className="text-xl font-semibold text-green-400">B.Tech - KL University</h3>
+          <p className="text-gray-300">CGPA: <span className="text-pink-500">8.91</span></p>
+        </div>
+      </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-center py-6 mt-12">
-        <p>© {new Date().getFullYear()} Sathwik | All Rights Reserved</p>
-      </footer>
+      {/* Certifications */}
+      <section id="certifications" className="container mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-green-400 mb-10">📜 Certifications</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-pink-400">Python Foundation</h3>
+            <a href="https://ik.imagekit.io/zpvisqc1b/PYTHON_INFOSIS.pdf?updatedAt=1757793621254" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">
+              View Certificate
+            </a>
+          </div>
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-pink-400">AI/ML Level 1 Using Python</h3>
+            <a href="https://ik.imagekit.io/zpvisqc1b/AIML%20USING%20PYTHON%20LEVEL%201.pdf?updatedAt=1757793888213" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">
+              View Certificate
+            </a>
+          </div>
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-pink-400">TCS Career Edge - Young Professional</h3>
+            <a href="https://ik.imagekit.io/zpvisqc1b/TCS%20CERTIFICATE.pdf?updatedAt=1757794050950" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">
+              View Certificate
+            </a>
+          </div>
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-pink-400">SQL Certification</h3>
+            <a href="https://ik.imagekit.io/zpvisqc1b/SQL-Certificate%20(1).pdf?updatedAt=1757797222409" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">
+              View Certificate
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="container mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-pink-400 mb-6">📩 Contact Me</h2>
+        <form className="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4 max-w-xl mx-auto">
+          <input type="text" placeholder="Your Name" className="w-full p-3 rounded bg-gray-900 text-gray-200" />
+          <input type="email" placeholder="Your Email" className="w-full p-3 rounded bg-gray-900 text-gray-200" />
+          <textarea placeholder="Your Message" className="w-full p-3 rounded bg-gray-900 text-gray-200"></textarea>
+          <button type="submit" className="w-full bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 rounded-lg hover:from-pink-400 hover:to-purple-500 transition">
+            Send Message
+          </button>
+        </form>
+      </section>
     </div>
   );
 }

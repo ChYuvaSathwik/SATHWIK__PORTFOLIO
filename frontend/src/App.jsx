@@ -5,9 +5,40 @@ function App() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/projects/")
-      .then((res) => res.json())
-      .then((data) => setProjects(data));
+    // Instead of fetching projects, we directly define them here 
+    // since you want to customize them.
+    const customProjects = [
+      {
+        id: 1,
+        title: "Expense Tracker",
+        description:
+          "A responsive web-based money management tool that lets users log income and expenses, view real-time balance updates, and track financial data through an interactive UI. It also provides simple visual insights to help users manage their budgets effectively.",
+        link: "https://chyuvasathwik.github.io/Expensive-Tracker/"
+      },
+      {
+        id: 2,
+        title: "Python Voice Assistant",
+        description:
+          "A Python-based voice assistant that recognizes user commands, performs tasks like opening applications, searching the web, and giving responses, showcasing speech recognition and automation skills.",
+        link: "https://github.com/ChYuvaSathwik/PythonVoiceAssistantSathwik"
+      },
+      {
+        id: 3,
+        title: "Think-A-Number",
+        description:
+          "A fun and interactive guessing game built using modern web technologies. Players try to guess a randomly generated number, receiving feedback on each guess. Deployed on Vercel for smooth, responsive performance and accessible gameplay.",
+        link: "https://think-a-number.vercel.app/"
+      },
+      {
+        id: 4,
+        title: "Sathwik Portfolio",
+        description:
+          "A personal portfolio website showcasing my skills, projects, and achievements. Built with React, Tailwind CSS, and Django, it highlights my journey as an aspiring Python developer and provides a central hub to explore my work.",
+        link: "https://github.com/ChYuvaSathwik/SATHWIK__PORTFOLIO"
+      }
+    ];
+
+    setProjects(customProjects);
 
     fetch("http://127.0.0.1:8000/api/skills/")
       .then((res) => res.json())
@@ -50,7 +81,7 @@ function App() {
             href="https://github.com/ChYuvaSathwik"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800 transition"
+            className="bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-2 rounded-lg text-lg shadow-md hover:from-pink-400 hover:to-purple-500 hover:scale-105 transition"
           >
             GitHub
           </a>
@@ -58,14 +89,14 @@ function App() {
             href="https://linkedin.com/in/YOUR_LINKEDIN"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-pink-600 px-4 py-2 rounded-lg hover:bg-pink-500 transition"
+            className="bg-pink-600 px-6 py-2 rounded-lg text-lg shadow-md hover:bg-pink-500 hover:scale-105 transition"
           >
             LinkedIn
           </a>
           <a
             href="https://ik.imagekit.io/zpvisqc1b/Sathwik_Chinta_Python_Developer_Resume.pdf?updatedAt=1757793373814"
             download
-            className="bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-2 rounded-lg hover:from-pink-400 hover:to-purple-500 transition"
+            className="bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-2 rounded-lg text-lg shadow-md hover:from-pink-400 hover:to-purple-500 hover:scale-105 transition"
           >
             📄 Get Resume
           </a>
